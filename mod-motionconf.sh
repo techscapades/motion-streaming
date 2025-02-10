@@ -13,6 +13,7 @@ else
     exit 1
 fi
 
+detected_device=$(v4l2-ctl --list-devices | awk '/USB Camera/{f=1} f && /\/dev\/video/{print $1; exit}')
 
 echo "The value from the cam_name file is: $value"
 
@@ -20,8 +21,8 @@ echo "Setting camera parameters in /motion-streaming/${value} to /motion-streami
 sed -i "s|^video_device .*|video_device $(cat /motion-streaming/${value}/cam_path.txt)|" /motion-streaming/motion.conf
 sed -i "s|^webcontrol_port .*|webcontrol_port $(cat /motion-streaming/${value}/webcontrolport.txt)|" /motion-streaming/motion.conf
 sed -i "s|^stream_port .*|stream_port $(cat /motion-streaming/${value}/streamport.txt)|" /motion-streaming/motion.conf
-sed -i "s|^stream_authentication .*|stream_authentication $(cat /motion-streaming/auth.txt)|" /etc/motion/motion.conf
-sed -i "s|^webcontrol_authentication .*|webcontrol_authentication $(cat /motion-streaming/auth.txt)|" /etc/motion/motion.conf
+sed -i "s|^video_device.*|video_device $detected_device|" /motion-streaming/motion.conf
 echo "Copying /motion-streaming/motion.conf to /etc/motion"
 cp -f /motion-streaming/motion.conf /etc/motion/
 echo "done"
+grep video_device /etc/motion/motion.conf
