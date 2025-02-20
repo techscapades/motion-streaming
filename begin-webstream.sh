@@ -6,4 +6,5 @@ hostname
 hostname -I
 echo "============="
 avahi-daemon -D
+bash /motion-streaming/mod-motionconf.sh
 motion
