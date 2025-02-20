@@ -13,18 +13,33 @@ docker start cam1-videostream && docker exec -d cam1-videostream /bin/bash /moti
 
 modifications made to motion.conf:
 1.video_device /dev/video3
+
 2.framerate 30
+
 3.#text_left CAMERA1
+
 4.#text_right %Y-%m-%d\n%T-%q
+
 5.movie_output off
+
 6.webcontrol_localhost off
+
 7.webcontrol_port 18510
+
 8.stream_localhost off
+
 9.stream_port 18511
+
 added:
+
 1.stream_maxrate 30
+
 2.stream_quality 50
+
 3.webcontrol_auth_method 1
+
 4.webcontrol_authentication admin:password
+
 5.stream_auth_method 1
+
 6.stream_authentication admin:password
