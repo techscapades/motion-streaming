@@ -17,7 +17,7 @@ Modification of cam1-cam4:
 2. the docker run command has this parameter: "echo 'cam1' , this will set all cam1 parameters defined in the cam1 subfolder 
 
 modifications made to motion.conf:
-1. video_device /dev/video3
+1. video_device /dev/video3 # will be set dynamically instead
 2. framerate 30
 3. #text_left CAMERA1
 4. #text_right %Y-%m-%d\n%T-%q
