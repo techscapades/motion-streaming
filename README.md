@@ -9,6 +9,7 @@ setup on linux host:
 6. bash WS-setup.sh
 
 to start streaming:
+
 docker start cam-videostream && docker exec -d cam-videostream /bin/bash /motion-streaming/begin-webstream.sh
 
 Modification of cam1-cam4:
