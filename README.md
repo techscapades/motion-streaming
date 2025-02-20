@@ -11,6 +11,9 @@ setup on linux host:
 to start streaming:
 docker start cam1-videostream && docker exec -d cam1-videostream /bin/bash /motion-streaming/begin-webstream.sh
 
+Modification of cam1-cam4:
+1.
+
 modifications made to motion.conf:
 1. video_device /dev/video3
 2. framerate 30
@@ -24,14 +27,9 @@ modifications made to motion.conf:
 
 added:
 
-1.stream_maxrate 30
-
-2.stream_quality 50
-
-3.webcontrol_auth_method 1
-
-4.webcontrol_authentication admin:password
-
-5.stream_auth_method 1
-
-6.stream_authentication admin:password
+1. stream_maxrate 30
+2. stream_quality 50
+3. webcontrol_auth_method 1
+4. webcontrol_authentication admin:password
+5. stream_auth_method 1
+6. stream_authentication admin:password
