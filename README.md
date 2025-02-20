@@ -9,8 +9,8 @@ setup on linux host:
 6. bash WS-setup.sh
 
 to start streaming:
-
-docker start cam-videostream && docker exec -d cam-videostream /bin/bash /motion-streaming/begin-webstream.sh
+1. docker start cam-videostream && docker exec -d cam-videostream /bin/bash /motion-streaming/begin-webstream.sh
+2. go to the webstreaming port you defined for cam1 and then login to the webpage
 
 Modification of cam1-cam4:
 1. the cam_path.txt file is deprecated, it scans the available video devices instead and sets that dynamically before motion begins
